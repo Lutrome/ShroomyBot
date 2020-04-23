@@ -284,9 +284,9 @@ def get_math_js(expr_list):
 
 def get_dictionary(word: str="", app_id: str="", app_key: str=""):
     dict_wrapper = {'source': "https://www.oxforddictionaries.com"}
-    language = 'en'
+    language = 'en-us'
 
-    url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word
+    url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/' + language + '/' + word.lower()
 
     r = requests.get(url, headers={'app_id': app_id, 'app_key': app_key}, timeout=30)
     logging.debug(r.url)
